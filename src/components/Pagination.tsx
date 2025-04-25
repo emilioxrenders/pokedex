@@ -25,7 +25,7 @@ export default function Pagination({ currentPage, totalPages }: Props) {
   }
 
   return (
-    <div className="flex items-center gap-3 mt-4">
+    <div className="flex items-center gap-3">
       {currentPage > 1 && (
         <Link href={`/?page=${currentPage - 1}`} className="underline">
           ← Prev
@@ -35,11 +35,11 @@ export default function Pagination({ currentPage, totalPages }: Props) {
       {pageNumbers.map((page, idx) =>
         typeof page === "number" ? (
           page === currentPage ? (
-            <span key={idx} className="font-bold text-blue-600">
+            <span key={idx} className="font-bold text-purple-600">
               {page}
             </span>
           ) : (
-            <Link key={idx} href={`/?page=${page}`} className="underline">
+            <Link key={idx} href={`/?page=${page}`} className="">
               {page}
             </Link>
           )
@@ -49,7 +49,7 @@ export default function Pagination({ currentPage, totalPages }: Props) {
       )}
 
       {currentPage < totalPages && (
-        <Link href={`/?page=${currentPage + 1}`} className="underline">
+        <Link href={`/?page=${currentPage + 1}`} className="">
           Next →
         </Link>
       )}

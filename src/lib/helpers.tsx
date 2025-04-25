@@ -19,3 +19,13 @@ export function sanitizePageParam(param: string | undefined): number | null {
 
   return page;
 }
+
+export function extractQueryParam(
+  param: string | string[] | undefined
+): string | undefined {
+  return Array.isArray(param) ? param[0] : param;
+}
+
+export function isValidSlug(slug: string): boolean {
+  return /^[a-z0-9_-]+$/i.test(slug);
+}
