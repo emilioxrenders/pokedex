@@ -1,3 +1,5 @@
+import { PER_PAGE } from "@/lib/pokemon";
+
 export default function PokemonGridSkeleton() {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -17,5 +19,3 @@ export default function PokemonGridSkeleton() {
     </div>
   );
 }
-
-const PER_PAGE = 20;
